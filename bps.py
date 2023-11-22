@@ -40,16 +40,21 @@ base_url = "https://shopee.co.id"
 list_name, list_price, list_link, list_sold, list_location = [], [], [], [], []
 
 
-for area in data.find_all("div", class_="col-xs-2-4 shopee-search-item-result__item"):
+#for area in data.find_all("div", class_="col-xs-2-4 shopee-search-item-result__item"):
+col-xs-2-4 shopee-search-item-result__item
+for area in data.find_all("div", class_="row shopee-search-item-result__items"):
     print("processing data to-" + str(i))
-    name = area.find("div", class_="ie3A+n bM+7UW Cve6sh").get_text()
-    price = area.find("span", class_="ZEgDH9").get_text()
+    #name = area.find("div", class_="ie3A+n bM+7UW Cve6sh").get_text()
+    name = area.find("div", class_="GD02sl _3AO1tA IXhE9E").get_text()
+    #price = area.find("span", class_="ZEgDH9").get_text()
+    price = area.find("span", class_="sHnxNa").get_text()
     link = base_url + area.find("a")["href"]
-    sold = area.find("div", class_="r6HknA uEPGHT")
+    #sold = area.find("div", class_="r6HknA uEPGHT")
+    sold = area.find("div", class_="sdJLPr MbhsP1")
     if sold is not None:
         sold = sold.get_text()
-    location = area.find("div", class_="zGGwiV").get_text()
-
+    #location = area.find("div", class_="zGGwiV").get_text()
+    location = area.find("div", class_="MML2bA").get_text()
     list_name.append(name)
     list_price.append(price)
     list_link.append(link)
