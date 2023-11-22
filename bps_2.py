@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 import time
 
 #chrome_options = Options()
@@ -35,7 +36,7 @@ def search(katakunci):
         driver.execute_script('window.scrollTo(0, 2500);')
         time.sleep(5)
         soup_a = BeautifulSoup(driver.page_source, 'html.parser')
-        products = soup_a.find('div', class_='row shopee-search-item-result__items')
+        products = soup_a.find('ul', class_='row shopee-search-item-result__items')
         for link in products.find_all('a'):
             links.append(link.get('href'))
             print(link.get('href'))
