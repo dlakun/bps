@@ -64,4 +64,5 @@ df = pd.DataFrame({"Name": list_name, "Price": list_price, "Link": list_link, "S
 writer: ExcelWriter = pd.ExcelWriter("/workspaces/bps/Laptop.xlsx")
 
 df.to_excel(writer, "Sheet1", index=False)
-writer.save()
+#writer.save()
+writer.close()
