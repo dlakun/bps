@@ -11,10 +11,16 @@ from selenium.webdriver.chrome.options import Options
 import time
 
 chrome_options = Options()
-# chrome_options.add_argument('--headless')
+chrome_options.add_argument('--headless')
 chrome_options.add_argument('log-level=2')
-#driver = webdriver.Chrome('./chromedriver', options=chrome_options)
 driver = webdriver.Chrome()
+
+
+#Setup WebDriver
+#option = webdriver.ChromeOptions()
+#option.add_argument("--headless")
+#service = Service()
+#driver = webdriver.Chrome(service=service, options=option)
 katakunci = input('Masukkan kata kunci : ')
 
 def search(katakunci):
