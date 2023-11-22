@@ -10,6 +10,7 @@ import time
 option = webdriver.ChromeOptions()
 option.add_argument("--headless")
 service = Service("chromedriver.exe")
+
 driver = webdriver.Chrome(service=service, options=option)
 
 #Scraping Data
