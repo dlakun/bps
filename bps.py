@@ -41,7 +41,6 @@ list_name, list_price, list_link, list_sold, list_location = [], [], [], [], []
 
 
 #for area in data.find_all("div", class_="col-xs-2-4 shopee-search-item-result__item"):
-col-xs-2-4 shopee-search-item-result__item
 for area in data.find_all("div", class_="row shopee-search-item-result__items"):
     print("processing data to-" + str(i))
     #name = area.find("div", class_="ie3A+n bM+7UW Cve6sh").get_text()
