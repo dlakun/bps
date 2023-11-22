@@ -9,7 +9,7 @@ import time
 #Setup WebDriver
 option = webdriver.ChromeOptions()
 option.add_argument("--headless")
-service = Service("chromedriver.exe")
+service = Service("")
 
 driver = webdriver.Chrome(service=service, options=option)
 
